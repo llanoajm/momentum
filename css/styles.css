@@ -290,7 +290,12 @@ section{
     background: linear-gradient(120deg, #04166f 0%, #001b4d 100%);
     clip-path: circle(600px at right 800px);
 }
-
+.propuestas{
+    text-align: center;
+}
+.propuestas p{
+    margin: 40px;
+}
 .mobile-section{
     display: none;
     padding-top: 40px;
@@ -628,3 +633,28 @@ blockquote p {
         padding-top: 0 !important;
     }
 } */
+.expandChildTable:before {
+    content: "+";
+    display: block;
+    cursor: pointer;
+}
+.expandChildTable.selected:before {
+    content: "-";
+}
+.childTableRow {
+    display: none;
+}
+.childTableRow table {
+    border: 2px solid #555;
+}
+
+td{
+    text-align: center;
+    font-size: 25px;
+}
+td p{
+    font-size: 20px;
+    color: #333;
+    padding-left: 80px;
+    padding-right: 80px;
+}
