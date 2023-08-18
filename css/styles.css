@@ -287,7 +287,7 @@ section{
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(120deg, #000f5c 0%, #001b4d 100%);
+    background: linear-gradient(120deg, #04166f 0%, #001b4d 100%);
     clip-path: circle(600px at right 800px);
 }
 
