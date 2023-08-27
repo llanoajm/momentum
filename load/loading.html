@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Glowing Meteor</title>
+  <link rel="stylesheet" href="loadstyle.css">
+
+</head>
+<body>
+
+
+<!-- partial:index.partial.html -->
+<div class="first">
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
+<div class="second">
+	<ul>
+		<li></li>
+		<li></li>
+	</ul>
+</div>
+<div class="third">
+	<ul>
+		<li></li>
+		<li></li>
+		<li class="floating-1"></li>
+		<li class="floating-1"></li>
+		<li class="floating-2"></li>
+		<li class="floating-2"></li>
+	</ul>
+</div>
+<div class="fourth">
+	<ul>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li class="floating"></li>
+		<li class="floating"></li>
+		<li class="floating"></li>
+		<li class="floating"></li>
+	</ul>
+	<span class="smile"></span>
+	<span class="eyes"></span>
+	
+</div>
+
+<div class=random-stars-container>
+	<span class="random-stars"></span>
+	<span class="random-stars"></span>
+	<span class="random-stars"></span>
+	<span class="random-stars"></span>
+</div>
+
+<button onclick="playAudioAndShowButton()" style="
+  position: fixed;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -0%);
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  border-color:aliceblue;
+  border-radius: 10px; /* Make it round */
+  width: 140px;
+  height: 40px;
+  text-align: center;
+  font-size: 23px;
+  cursor: pointer;
+">Súbete ▶</button>
+    <audio id="audioElement" autoplay>
+        <source src="../tunes/dontworry.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+        
+    </audio>
+<!-- partial -->
+<script src='https://code.createjs.com/createjs-2015.11.26.min.js'></script>
+<script src='https://code.createjs.com/easeljs-0.8.2.min.js'></script>
+<script src='https://code.createjs.com/tweenjs-0.6.2.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
+<script>
+	function playAudioAndShowButton() {
+		// Play the audio
+		document.getElementById('audioElement').play();
+  
+		// Create the second button if it doesn't already exist
+		if (!document.getElementById('newButton')) {
+		  var newButton = document.createElement("button");
+		  newButton.id = "newButton";
+		  newButton.innerHTML = "Momentum";
+		  newButton.style.position = "fixed";
+		  newButton.style.top = "80%";
+		  newButton.style.left = "60%";
+		  newButton.style.transform = "translate(-50%, -0%)";
+		  newButton.style.backgroundColor = "rgb(0, 0, 0)";
+		  newButton.style.color = "rgb(255, 255, 255)";
+		  
+		  newButton.style.borderRadius = "10px";
+		  newButton.style.borderColor = "rgb(255,255,255)"
+		  newButton.style.width = "140px";
+		  newButton.style.height = "40px";
+		  newButton.style.textAlign = "center";
+		  newButton.style.fontSize = "23px";
+		  newButton.style.cursor = "pointer";
+		  
+		
+		  // Add the second button to the body
+		  document.body.appendChild(newButton);
+		}
+	  }
+	
+</script>
+</body>
+</html>

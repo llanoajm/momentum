@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Button Centering</title>
+  <script type="text/javascript">
+    function playAudioAndShowButton() {
+      // Play the audio
+      document.getElementById('audioElement').play();
+
+      // Create the second button
+      var newButton = document.createElement("button");
+      newButton.innerHTML = "New Button ▶";
+      newButton.style.position = "fixed";
+      newButton.style.top = "50%";
+      newButton.style.left = "60%";
+      newButton.style.transform = "translate(-50%, -50%)";
+      newButton.style.backgroundColor = "rgb(5, 76, 143)";
+      newButton.style.color = "rgb(37, 181, 176)";
+      newButton.style.border = "none";
+      newButton.style.borderRadius = "10%";
+      newButton.style.width = "140px";
+      newButton.style.height = "40px";
+      newButton.style.textAlign = "center";
+      newButton.style.fontSize = "26px";
+      newButton.style.cursor = "pointer";
+      
+      // Add the second button to the body
+      document.body.appendChild(newButton);
+    }
+  </script>
+</head>
+<body>
+  <button onclick="playAudioAndShowButton()" style="
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(5, 76, 143);
+    color: rgb(37, 181, 176);
+    border: none;
+    border-radius: 10%; 
+    width: 140px;
+    height: 40px;
+    text-align: center;
+    font-size: 26px;
+    cursor: pointer;
+  ">Súbete ▶</button>
+
+  <audio id="audioElement" autoplay>
+    <source src="../tunes/dontworry.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+</body>
+</html>
