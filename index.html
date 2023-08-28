@@ -598,6 +598,33 @@
         });
       }
     });
+
+      // Initial scroll position
+      let lastScrollTop = 0;
+
+      // Element to hide on scroll
+      const playBtn = document.getElementById('playBtn');
+      const newBtn = document.getElementById('newBtn');
+  
+      // Listen for scroll events
+      window.addEventListener('scroll', function() {
+        // Current scroll position
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  
+        // Determine scroll direction
+        if (scrollTop > lastScrollTop){
+          // Downward scroll
+          playBtn.style.display = 'none';
+          newBtn.style.display = 'none';
+        } else {
+          // Upward scroll
+          playBtn.style.display = 'block';
+          newBtn.style.display = 'none';
+        }
+  
+        // Update last scroll position
+        lastScrollTop = scrollTop;
+      });
     </script>
 </body>
 
