@@ -527,6 +527,7 @@
         // Create the second button if it doesn't already exist
         var all = document.getElementById('')
         if (!document.getElementById('newButton')) {
+          
           var newButton = document.createElement("button");
           newButton.id = "newButton";
           newButton.innerHTML = "Momentum";
@@ -552,6 +553,7 @@
         
           // Add the second button to the body
           document.body.appendChild(newButton);
+          scrollListener()
     
           var h1 = document.createElement("h1");
           h1.id = "dayHeader";
@@ -566,6 +568,7 @@
           
             // Add the h1 to the body
               document.body.appendChild(h1);
+              scrollListener()
         }
         }
 
@@ -604,7 +607,8 @@
 
       // Element to hide on scroll
       const playBtn = document.getElementById('playBtn');
-      const newBtn = document.getElementById('newBtn');
+      const newBtn = document.getElementById('newButton');
+      const h = document.getElementById('h1');
   
       // Listen for scroll events
       window.addEventListener('scroll', function() {
@@ -616,15 +620,52 @@
           // Downward scroll
           playBtn.style.display = 'none';
           newBtn.style.display = 'none';
+          h.style.display = 'none';
         } else {
           // Upward scroll
           playBtn.style.display = 'block';
-          newBtn.style.display = 'none';
+          newBtn.style.display = 'block';
+          h.style.display = 'block';
         }
   
         // Update last scroll position
         lastScrollTop = scrollTop;
       });
+
+      
+        
+      function scrollListener (){
+
+        let lastScrollTop = 0;
+
+      // Element to hide on scroll
+      const playBtn = document.getElementById('playBtn');
+      const newBtn = document.getElementById('newButton');
+      const h = document.getElementById('h1');
+  
+      // Listen for scroll events
+      window.addEventListener('scroll', function() {
+        // Current scroll position
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  
+        // Determine scroll direction
+        if (scrollTop > lastScrollTop){
+          // Downward scroll
+          playBtn.style.display = 'none';
+          newBtn.style.display = 'none';
+          h.style.display = 'none';
+        } else {
+          // Upward scroll
+          playBtn.style.display = 'block';
+          newBtn.style.display = 'block';
+          h.style.display = 'block';
+        }
+  
+        // Update last scroll position
+        lastScrollTop = scrollTop;
+      });
+        
+      }
     </script>
 </body>
 
