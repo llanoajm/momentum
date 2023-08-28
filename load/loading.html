@@ -76,7 +76,7 @@
   cursor: pointer;
 " id="playBtn">Súbete ▶</button>
     <audio id="audioElement" autoplay>
-        <source src="../tunes/dontworry.mp3" type="audio/mp3">
+        <source type="audio/mp3">
         Your browser does not support the audio element.
         
     </audio>
@@ -88,7 +88,13 @@
 <script>
 	function playAudioAndShowButton() {
 		// Play the audio
-		document.getElementById('audioElement').play();
+		var mp3Files = ["1.mp3", "2.mp3", "3.mp3", "4.mp3", "5.mp3", "6.mp3", "7.mp3", "8.mp3", "9.mp3", "10.mp3", "11.mp3", "12.mp3", "13.mp3"];
+
+		var randomIndex = Math.floor(Math.random() * mp3Files.length);
+  		var randomMp3File = mp3Files[randomIndex];
+		var audioElement = document.getElementById('audioElement');
+		audioElement.src = "../tunes/" + randomMp3File;
+		audioElement.play();
 		document.getElementById('playBtn').innerHTML = "Siguiente ▶";
 		document.getElementById('playBtn').style.left = "40%"
   
