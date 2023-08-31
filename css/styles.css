@@ -347,7 +347,7 @@ section{
         left: 0;
         width: 100%;
         height: 100%;
-        background: #19C2D8;
+        background: linear-gradient(120deg, #041fa7 0%, #004ddb 100%);
         clip-path: circle(400px at right 700px);
     }
     .content .textBox p{
